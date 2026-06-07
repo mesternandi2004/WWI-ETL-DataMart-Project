@@ -1,0 +1,1124 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/13/2026 8:38:46 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MESTERNANDI2004"
+  DTS:CreatorName="MESTERNANDI2004\meste"
+  DTS:DTSID="{6CBF95FA-D4FD-4778-BADE-E466BB1F89D0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1038"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{671974C3-1EB2-4916-B8B5-F9E8B89DAA28}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Data Connection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F61C10BE-50E6-475B-88AE-581546C88807}"
+      DTS:ObjectName="Data Connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="User ID=;Initial Catalog=WWI_Stage;Provider=MSOLEDBSQL19.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Trust Server Certificate=True;Server SPN=;Authentication=;Access Token=;Host Name In Certificate=;Server Certificate=;Application Name=SSIS-Package-{F61C10BE-50E6-475B-88AE-581546C88807}Data Connection;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.WideWorldImporters]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8909B1D4-FAA7-44EE-BC13-1DE3B1EAFC40}"
+      DTS:ObjectName="LocalHost.WideWorldImporters">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;User ID=;Initial Catalog=WideWorldImporters;Provider=MSOLEDBSQL19.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Trust Server Certificate=True;Server SPN=;Authentication=;Access Token=;Host Name In Certificate=;Server Certificate=;Application Name=SSIS-Package-{8909B1D4-FAA7-44EE-BC13-1DE3B1EAFC40}LocalHost.WideWorldImporters;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.WWI_Stage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{75275A37-25BA-4447-8733-FC1C962AF664}"
+      DTS:ObjectName="LocalHost.WWI_Stage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;User ID=;Initial Catalog=WWI_Stage;Provider=MSOLEDBSQL19.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Trust Server Certificate=True;Server SPN=;Authentication=;Access Token=;Host Name In Certificate=;Server Certificate=;Application Name=SSIS-Package-{75275A37-25BA-4447-8733-FC1C962AF664}LocalHost.WWI_Stage;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extract data to Stage"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{946BF479-290D-4DED-951C-1221EDB35932}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract data to Stage"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract data to Stage\Invoices dest"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Invoices dest"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STA_Invoices]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract data to Stage\Invoices dest.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.WWI_Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.WWI_Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[InvoiceID]"
+                      cachedDataType="i4"
+                      cachedName="InvoiceID"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[InvoiceID]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[CustomerID]"
+                      cachedDataType="i4"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[BillToCustomerID]"
+                      cachedDataType="i4"
+                      cachedName="BillToCustomerID"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[BillToCustomerID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[BillToCustomerID]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[OrderID]"
+                      cachedDataType="i4"
+                      cachedName="OrderID"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[DeliveryMethodID]"
+                      cachedDataType="i4"
+                      cachedName="DeliveryMethodID"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryMethodID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[DeliveryMethodID]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[ContactPersonID]"
+                      cachedDataType="i4"
+                      cachedName="ContactPersonID"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[ContactPersonID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[ContactPersonID]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[AccountsPersonID]"
+                      cachedDataType="i4"
+                      cachedName="AccountsPersonID"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[AccountsPersonID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[AccountsPersonID]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[SalespersonPersonID]"
+                      cachedDataType="i4"
+                      cachedName="SalespersonPersonID"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[SalespersonPersonID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[SalespersonPersonID]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[PackedByPersonID]"
+                      cachedDataType="i4"
+                      cachedName="PackedByPersonID"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[PackedByPersonID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[PackedByPersonID]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[InvoiceDate]"
+                      cachedDataType="dbDate"
+                      cachedName="InvoiceDate"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceDate]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[InvoiceDate]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[CustomerPurchaseOrderNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="CustomerPurchaseOrderNumber"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[CustomerPurchaseOrderNumber]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[CustomerPurchaseOrderNumber]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[IsCreditNote]"
+                      cachedDataType="bool"
+                      cachedName="IsCreditNote"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[IsCreditNote]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[IsCreditNote]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[CreditNoteReason]"
+                      cachedDataType="nText"
+                      cachedName="CreditNoteReason"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[CreditNoteReason]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[CreditNoteReason]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[Comments]"
+                      cachedDataType="nText"
+                      cachedName="Comments"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[Comments]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[Comments]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[DeliveryInstructions]"
+                      cachedDataType="nText"
+                      cachedName="DeliveryInstructions"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryInstructions]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[DeliveryInstructions]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[DeliveryRun]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="DeliveryRun"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryRun]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[DeliveryRun]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[RunPosition]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="RunPosition"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[RunPosition]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[RunPosition]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[ReturnedDeliveryData]"
+                      cachedDataType="nText"
+                      cachedName="ReturnedDeliveryData"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[ReturnedDeliveryData]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[ReturnedDeliveryData]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[ConfirmedDeliveryTime]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="ConfirmedDeliveryTime"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[ConfirmedDeliveryTime]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[ConfirmedDeliveryTime]" />
+                    <inputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].Columns[ConfirmedReceivedBy]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="ConfirmedReceivedBy"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[ConfirmedReceivedBy]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[ConfirmedReceivedBy]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceID]"
+                      dataType="wstr"
+                      length="256"
+                      name="InvoiceID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="256"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[BillToCustomerID]"
+                      dataType="wstr"
+                      length="256"
+                      name="BillToCustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                      dataType="wstr"
+                      length="256"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryMethodID]"
+                      dataType="wstr"
+                      length="256"
+                      name="DeliveryMethodID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[ContactPersonID]"
+                      dataType="wstr"
+                      length="256"
+                      name="ContactPersonID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[AccountsPersonID]"
+                      dataType="wstr"
+                      length="256"
+                      name="AccountsPersonID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[SalespersonPersonID]"
+                      dataType="wstr"
+                      length="256"
+                      name="SalespersonPersonID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[PackedByPersonID]"
+                      dataType="wstr"
+                      length="256"
+                      name="PackedByPersonID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceDate]"
+                      dataType="wstr"
+                      length="256"
+                      name="InvoiceDate" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[CustomerPurchaseOrderNumber]"
+                      dataType="wstr"
+                      length="256"
+                      name="CustomerPurchaseOrderNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[IsCreditNote]"
+                      dataType="wstr"
+                      length="256"
+                      name="IsCreditNote" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[CreditNoteReason]"
+                      dataType="wstr"
+                      length="256"
+                      name="CreditNoteReason" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[Comments]"
+                      dataType="wstr"
+                      length="256"
+                      name="Comments" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryInstructions]"
+                      dataType="wstr"
+                      length="256"
+                      name="DeliveryInstructions" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryRun]"
+                      dataType="wstr"
+                      length="256"
+                      name="DeliveryRun" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[RunPosition]"
+                      dataType="wstr"
+                      length="256"
+                      name="RunPosition" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[ReturnedDeliveryData]"
+                      dataType="wstr"
+                      length="256"
+                      name="ReturnedDeliveryData" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[ConfirmedDeliveryTime]"
+                      dataType="wstr"
+                      length="256"
+                      name="ConfirmedDeliveryTime" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input].ExternalColumns[ConfirmedReceivedBy]"
+                      dataType="wstr"
+                      length="256"
+                      name="ConfirmedReceivedBy" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract data to Stage\Invoices dest.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices dest.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices dest.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices dest.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract data to Stage\Invoices src"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Invoices src"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from Sales.Invoices</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract data to Stage\Invoices src.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.WideWorldImporters]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.WideWorldImporters]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[InvoiceID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[InvoiceID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[InvoiceID]"
+                      name="InvoiceID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      name="CustomerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[BillToCustomerID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[BillToCustomerID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[BillToCustomerID]"
+                      name="BillToCustomerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[OrderID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[OrderID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[OrderID]"
+                      name="OrderID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[DeliveryMethodID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[DeliveryMethodID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[DeliveryMethodID]"
+                      name="DeliveryMethodID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[ContactPersonID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[ContactPersonID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[ContactPersonID]"
+                      name="ContactPersonID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[AccountsPersonID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[AccountsPersonID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[AccountsPersonID]"
+                      name="AccountsPersonID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[SalespersonPersonID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[SalespersonPersonID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[SalespersonPersonID]"
+                      name="SalespersonPersonID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[PackedByPersonID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[PackedByPersonID]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[PackedByPersonID]"
+                      name="PackedByPersonID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[InvoiceDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[InvoiceDate]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[InvoiceDate]"
+                      name="InvoiceDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[CustomerPurchaseOrderNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[CustomerPurchaseOrderNumber]"
+                      length="20"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[CustomerPurchaseOrderNumber]"
+                      name="CustomerPurchaseOrderNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[IsCreditNote]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[IsCreditNote]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[IsCreditNote]"
+                      name="IsCreditNote"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[CreditNoteReason]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[CreditNoteReason]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[CreditNoteReason]"
+                      name="CreditNoteReason"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[Comments]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[Comments]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[Comments]"
+                      name="Comments"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[DeliveryInstructions]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[DeliveryInstructions]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[DeliveryInstructions]"
+                      name="DeliveryInstructions"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[InternalComments]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[InternalComments]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[InternalComments]"
+                      name="InternalComments"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[TotalDryItems]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[TotalDryItems]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[TotalDryItems]"
+                      name="TotalDryItems"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[TotalChillerItems]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[TotalChillerItems]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[TotalChillerItems]"
+                      name="TotalChillerItems"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[DeliveryRun]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[DeliveryRun]"
+                      length="5"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[DeliveryRun]"
+                      name="DeliveryRun"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[RunPosition]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[RunPosition]"
+                      length="5"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[RunPosition]"
+                      name="RunPosition"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[ReturnedDeliveryData]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[ReturnedDeliveryData]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[ReturnedDeliveryData]"
+                      name="ReturnedDeliveryData"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[ConfirmedDeliveryTime]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[ConfirmedDeliveryTime]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[ConfirmedDeliveryTime]"
+                      name="ConfirmedDeliveryTime"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[ConfirmedReceivedBy]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[ConfirmedReceivedBy]"
+                      length="4000"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[ConfirmedReceivedBy]"
+                      name="ConfirmedReceivedBy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[LastEditedBy]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[LastEditedBy]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[LastEditedBy]"
+                      name="LastEditedBy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[LastEditedWhen]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[LastEditedWhen]"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].Columns[LastEditedWhen]"
+                      name="LastEditedWhen"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[InvoiceID]"
+                      dataType="i4"
+                      name="InvoiceID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      dataType="i4"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[BillToCustomerID]"
+                      dataType="i4"
+                      name="BillToCustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[OrderID]"
+                      dataType="i4"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[DeliveryMethodID]"
+                      dataType="i4"
+                      name="DeliveryMethodID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[ContactPersonID]"
+                      dataType="i4"
+                      name="ContactPersonID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[AccountsPersonID]"
+                      dataType="i4"
+                      name="AccountsPersonID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[SalespersonPersonID]"
+                      dataType="i4"
+                      name="SalespersonPersonID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[PackedByPersonID]"
+                      dataType="i4"
+                      name="PackedByPersonID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[InvoiceDate]"
+                      dataType="dbDate"
+                      name="InvoiceDate" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[CustomerPurchaseOrderNumber]"
+                      dataType="wstr"
+                      length="20"
+                      name="CustomerPurchaseOrderNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[IsCreditNote]"
+                      dataType="bool"
+                      name="IsCreditNote" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[CreditNoteReason]"
+                      dataType="nText"
+                      name="CreditNoteReason" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[Comments]"
+                      dataType="nText"
+                      name="Comments" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[DeliveryInstructions]"
+                      dataType="nText"
+                      name="DeliveryInstructions" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[InternalComments]"
+                      dataType="nText"
+                      name="InternalComments" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[TotalDryItems]"
+                      dataType="i4"
+                      name="TotalDryItems" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[TotalChillerItems]"
+                      dataType="i4"
+                      name="TotalChillerItems" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[DeliveryRun]"
+                      dataType="wstr"
+                      length="5"
+                      name="DeliveryRun" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[RunPosition]"
+                      dataType="wstr"
+                      length="5"
+                      name="RunPosition" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[ReturnedDeliveryData]"
+                      dataType="nText"
+                      name="ReturnedDeliveryData" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[ConfirmedDeliveryTime]"
+                      dataType="dbTimeStamp2"
+                      name="ConfirmedDeliveryTime"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[ConfirmedReceivedBy]"
+                      dataType="wstr"
+                      length="4000"
+                      name="ConfirmedReceivedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[LastEditedBy]"
+                      dataType="i4"
+                      name="LastEditedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output].ExternalColumns[LastEditedWhen]"
+                      dataType="dbTimeStamp2"
+                      name="LastEditedWhen"
+                      scale="7" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[InvoiceID]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[InvoiceID]"
+                      name="InvoiceID" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      name="CustomerID" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[BillToCustomerID]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[BillToCustomerID]"
+                      name="BillToCustomerID" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[OrderID]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[OrderID]"
+                      name="OrderID" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[DeliveryMethodID]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[DeliveryMethodID]"
+                      name="DeliveryMethodID" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[ContactPersonID]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[ContactPersonID]"
+                      name="ContactPersonID" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[AccountsPersonID]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[AccountsPersonID]"
+                      name="AccountsPersonID" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[SalespersonPersonID]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[SalespersonPersonID]"
+                      name="SalespersonPersonID" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[PackedByPersonID]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[PackedByPersonID]"
+                      name="PackedByPersonID" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[InvoiceDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[InvoiceDate]"
+                      name="InvoiceDate" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[CustomerPurchaseOrderNumber]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[CustomerPurchaseOrderNumber]"
+                      name="CustomerPurchaseOrderNumber" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[IsCreditNote]"
+                      dataType="bool"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[IsCreditNote]"
+                      name="IsCreditNote" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[CreditNoteReason]"
+                      dataType="nText"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[CreditNoteReason]"
+                      name="CreditNoteReason" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[Comments]"
+                      dataType="nText"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[Comments]"
+                      name="Comments" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[DeliveryInstructions]"
+                      dataType="nText"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[DeliveryInstructions]"
+                      name="DeliveryInstructions" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[InternalComments]"
+                      dataType="nText"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[InternalComments]"
+                      name="InternalComments" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[TotalDryItems]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[TotalDryItems]"
+                      name="TotalDryItems" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[TotalChillerItems]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[TotalChillerItems]"
+                      name="TotalChillerItems" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[DeliveryRun]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[DeliveryRun]"
+                      name="DeliveryRun" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[RunPosition]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[RunPosition]"
+                      name="RunPosition" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[ReturnedDeliveryData]"
+                      dataType="nText"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[ReturnedDeliveryData]"
+                      name="ReturnedDeliveryData" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[ConfirmedDeliveryTime]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[ConfirmedDeliveryTime]"
+                      name="ConfirmedDeliveryTime"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[ConfirmedReceivedBy]"
+                      dataType="wstr"
+                      length="4000"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[ConfirmedReceivedBy]"
+                      name="ConfirmedReceivedBy" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[LastEditedBy]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[LastEditedBy]"
+                      name="LastEditedBy" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[LastEditedWhen]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[LastEditedWhen]"
+                      name="LastEditedWhen"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract data to Stage.Paths[OLE DB Source Output]"
+              endId="Package\Extract data to Stage\Invoices dest.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Extract data to Stage\Invoices src.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate all tables in stage"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{734847E6-5CE7-4403-85AD-43B7840D0FE0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate all tables in stage"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F61C10BE-50E6-475B-88AE-581546C88807}"
+          SQLTask:SqlStatementSource="-- STAGE TRUNCATE SZKRIPT&#xA;USE WWI_Stage;&#xA;GO&#xA;&#xA;CREATE OR ALTER PROCEDURE TruncateAllStageTables&#xA;AS&#xA;BEGIN&#xA;    SET NOCOUNT ON;&#xA;&#xA;    TRUNCATE TABLE STA_Invoices;&#xA;    TRUNCATE TABLE STA_InvoiceLines;&#xA;    TRUNCATE TABLE STA_Customers;&#xA;    TRUNCATE TABLE STA_CustomerCategories;&#xA;    TRUNCATE TABLE STA_BuyingGroups;&#xA;    TRUNCATE TABLE STA_People;&#xA;    TRUNCATE TABLE STA_StockItems;&#xA;    TRUNCATE TABLE STA_StockGroups;&#xA;    TRUNCATE TABLE STA_StockItemStockGroups;&#xA;    TRUNCATE TABLE STA_Colors;&#xA;    TRUNCATE TABLE STA_PackageTypes;&#xA;    TRUNCATE TABLE STA_Cities;&#xA;    TRUNCATE TABLE STA_StateProvinces;&#xA;    TRUNCATE TABLE STA_Countries;&#xA;    TRUNCATE TABLE STA_DeliveryMethods;&#xA;&#xA;    END;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{B17FD16C-5604-47B8-834B-E74D1E9925B7}"
+      DTS:From="Package\Truncate all tables in stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Extract data to Stage" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Truncate all tables in stage"
+          TopLeft="73.3333293265769,32.0666664436791" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Extract data to Stage"
+          TopLeft="56.6666635705367,147.333332308796" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="155.733329326577,73.6666664436791">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.4666657560402,73.6666658651166"
+              Start="0,0"
+              End="-11.4666657560402,66.1666658651166">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.8333329325583" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.8333329325583"
+                    Point2="0,36.8333329325583"
+                    Point3="-4,36.8333329325583" />
+                  <mssgle:LineSegment
+                    End="-7.46666575604024,36.8333329325583" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.46666575604024,36.8333329325583"
+                    Point2="-11.4666657560402,36.8333329325583"
+                    Point3="-11.4666657560402,40.8333329325583" />
+                  <mssgle:LineSegment
+                    End="-11.4666657560402,66.1666658651166" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Extract data to Stage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133.6,41.6"
+          Id="Package\Extract data to Stage\Invoices src"
+          TopLeft="114.999998286366,35.9999994635582" />
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\Extract data to Stage\Invoices dest"
+          TopLeft="99.9999985098839,118.999998226762" />
+        <EdgeLayout
+          Id="Package\Extract data to Stage.Paths[OLE DB Source Output]"
+          TopLeft="181.799998286366,77.5999994635582">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.1999997764825,41.3999987632036"
+              Start="0,0"
+              End="-12.1999997764825,33.8999987632036">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.6999993816018" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.6999993816018"
+                    Point2="0,20.6999993816018"
+                    Point3="-4,20.6999993816018" />
+                  <mssgle:LineSegment
+                    End="-8.19999977648251,20.6999993816018" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.19999977648251,20.6999993816018"
+                    Point2="-12.1999997764825,20.6999993816018"
+                    Point3="-12.1999997764825,24.6999993816018" />
+                  <mssgle:LineSegment
+                    End="-12.1999997764825,33.8999987632036" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract data to Stage\Invoices src">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract data to Stage\Invoices dest">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

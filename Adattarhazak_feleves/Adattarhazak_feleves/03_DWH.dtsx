@@ -1,0 +1,2496 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/19/2026 12:50:11 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MESTERNANDI2004"
+  DTS:CreatorName="MESTERNANDI2004\meste"
+  DTS:DTSID="{1E3AF6BA-C216-40D8-A025-336C23A5C086}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1038"
+  DTS:ObjectName="03_DWH"
+  DTS:PackageType="5"
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{C90FE6A1-96DC-4B2C-9BE4-77EF5F660A22}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.ETL_CTRL]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+      DTS:ObjectName="LocalHost.ETL_CTRL">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;User ID=;Initial Catalog=ETL_CTRL;Provider=MSOLEDBSQL19.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Trust Server Certificate=True;Server SPN=;Authentication=;Access Token=;Host Name In Certificate=;Server Certificate=;Application Name=SSIS-03_DWH-{160C0D5E-E000-4393-BB75-BA87BC162329}LocalHost.ETL_CTRL;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.ETL_CTRL 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6BEAFC53-C168-4711-8A2E-ADC4363E5E4E}"
+      DTS:ObjectName="LocalHost.ETL_CTRL 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;User ID=;Initial Catalog=ETL_CTRL;Provider=MSOLEDBSQL19.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Trust Server Certificate=True;Server SPN=;Authentication=;Access Token=;Host Name In Certificate=;Server Certificate=;Application Name=SSIS-03_DWH-{6BEAFC53-C168-4711-8A2E-ADC4363E5E4E}LocalHost.ETL_CTRL 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.ETL_CTRL 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{53B41FC0-D097-4DD8-A136-FAC1E2781AC9}"
+      DTS:ObjectName="LocalHost.ETL_CTRL 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;User ID=;Initial Catalog=ETL_CTRL;Provider=MSOLEDBSQL19.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Trust Server Certificate=True;Server SPN=;Authentication=;Access Token=;Host Name In Certificate=;Server Certificate=;Application Name=SSIS-03_DWH-{53B41FC0-D097-4DD8-A136-FAC1E2781AC9}LocalHost.ETL_CTRL 2;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.WWI_DWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2164FB82-1717-4101-82F1-6ECF680240DE}"
+      DTS:ObjectName="LocalHost.WWI_DWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;User ID=;Initial Catalog=WWI_DWH;Provider=MSOLEDBSQL19.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Trust Server Certificate=True;Server SPN=;Authentication=;Access Token=;Host Name In Certificate=;Server Certificate=;Application Name=SSIS-03_DWH-{2164FB82-1717-4101-82F1-6ECF680240DE}LocalHost.WWI_DWH;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.WWI_DWH 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+      DTS:ObjectName="LocalHost.WWI_DWH 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;User ID=;Initial Catalog=WWI_DWH;Provider=MSOLEDBSQL19.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Trust Server Certificate=True;Server SPN=;Authentication=;Access Token=;Host Name In Certificate=;Server Certificate=;Application Name=SSIS-03_DWH-{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}LocalHost.WWI_DWH 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.WWI_Stage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5A5D6902-76AE-4197-8837-41BCE825AB9C}"
+      DTS:ObjectName="LocalHost.WWI_Stage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;User ID=;Initial Catalog=WWI_Stage;Provider=MSOLEDBSQL19.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Trust Server Certificate=True;Server SPN=;Authentication=;Access Token=;Host Name In Certificate=;Server Certificate=;Application Name=SSIS-03_DWH-{5A5D6902-76AE-4197-8837-41BCE825AB9C}LocalHost.WWI_Stage;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="20"
+      DTS:DTSID="{A98A34AF-6B2E-4CA7-8358-0AA0B89ADC24}"
+      DTS:ObjectName="LoadNumber">
+      <DTS:Property
+        DTS:DataType="20"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B135350B-8CB8-460F-A57B-C1D07F49B34A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::LoadNumber]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoadNumber">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{21634558-1A81-417C-89C8-8A9EC049341E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Rowcount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8DF6A002-0669-447B-8EA6-9A1BE6B023D0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Rowcount_SCD1I">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{77217C5A-8284-48EF-90C0-924562BE1424}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Rowcount_SCD1U">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DC299747-5D23-4C1F-9AAA-E3FB35573310}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Rowcount_SCD2I">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C49DBF58-9B4E-414C-A27F-CCE6CE451C8C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Rowcount_SCD2U">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E296F521-0D8E-4ED8-A269-67A2CB6F1A51}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Rowfact">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\dim_City"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{561c204b-8008-4f33-9e61-7ce07eaa9d2e}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="dim_City">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\dim_City\Audit dim_City STARTED"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{d538a74e-ee82-4e4f-8233-a13432abe937}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit dim_City STARTED"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber, layer_name,table_name, load_start_dts,row_count,status&#xA;) VALUES ( ?, 'DWH', 'dim_Dimcity_dwh', GETDATE(), 0, 'STARTED');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_City\Audit_Update_SCD1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{eaf72478-25b2-4db2-a59d-9faef582a0f2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit_Update_SCD1"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber,&#xA; layer_name,&#xA;table_name,&#xA; load_start_dts,&#xA;row_count,&#xA;status&#xA;) VALUES ( ?, 'DWH', 'dim_customer_dwh', GETDATE(), ?, 'Update');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Rowfact"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_City\SCD1 Insert"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{790ecd0d-b23b-4781-a7df-8ef37be81d62}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SCD1 Insert"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+              SQLTask:SqlStatementSource="INSERT INTO WWI_DWH.dbo.DimCity (&#xA;    CityID,&#xA;    CityName,&#xA;    StateProvinceName,&#xA;    CountryName,&#xA;    Continent,&#xA;    SalesTerritory,&#xA;    ValidFrom,&#xA;    ValidTo,&#xA;    LoadNumber&#xA;)&#xA;SELECT&#xA;    s.CityID,&#xA;    s.CityName,&#xA;    s.StateProvinceName,&#xA;    s.CountryName,&#xA;    s.Continent,&#xA;    s.SalesTerritory,&#xA;    CAST(GETDATE() AS DATE) AS ValidFrom,&#xA;    CAST('9999-12-31' AS DATE) AS ValidTo, -- Javítva: felesleges dupla CAST törölve&#xA;    ? AS LoadNumber&#xA;FROM WWI_DWH.dbo.DimCityVW s&#xA;LEFT JOIN WWI_DWH.dbo.DimCity d&#xA;  ON d.CityID = s.CityID&#xA;WHERE d.CityID IS NULL;&#xA;&#xA;SELECT @@ROWCOUNT;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2U" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_City\SCD1 update"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{101cd0d6-36fd-448a-acca-8b8c98f8b780}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SCD1 update"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+              SQLTask:SqlStatementSource="UPDATE d&#xA;SET&#xA;    d.CityName          = s.CityName,&#xA;    d.StateProvinceName = s.StateProvinceName,&#xA;    d.CountryName       = s.CountryName,&#xA;    d.Continent         = s.Continent,&#xA;    d.SalesTerritory    = s.SalesTerritory,&#xA;    d.LoadNumber        = ?&#xA;FROM WWI_DWH.dbo.DimCity d&#xA;JOIN WWI_DWH.dbo.DimCityVW s&#xA;  ON d.CityID = s.CityID&#xA;WHERE&#xA;       ISNULL(d.CityName, '')           &lt;&gt; ISNULL(s.CityName, '')&#xA;    OR ISNULL(d.StateProvinceName, '')  &lt;&gt; ISNULL(s.StateProvinceName, '')&#xA;    OR ISNULL(d.CountryName, '')        &lt;&gt; ISNULL(s.CountryName, '')&#xA;    OR ISNULL(d.Continent, '')          &lt;&gt; ISNULL(s.Continent, '')&#xA;    OR ISNULL(d.SalesTerritory, '')     &lt;&gt; ISNULL(s.SalesTerritory, '');&#xA;SELECT @@ROWCOUNT;&#xA;&#xA;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Rowcount_SCD1U" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_City.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{95d5e9e8-ff6c-4fa4-a516-822ac10cd8d7}"
+          DTS:From="Package\dim_City\Audit dim_City STARTED"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\dim_City\SCD1 update" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_City.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{6613e73c-00a2-41bf-b6a5-07300707d040}"
+          DTS:From="Package\dim_City\SCD1 update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\dim_City\Audit_Update_SCD1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_City.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{b94997fe-6961-4278-8cdb-45b97f5bdad5}"
+          DTS:From="Package\dim_City\SCD1 update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\dim_City\SCD1 Insert" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\dim_customer"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{E5DB6294-F1C2-4F1C-885F-7B0C741CCA21}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="dim_customer">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\dim_customer\Audit dim_customer STARTED"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{01d94b21-96db-42ea-8d2a-470c47128dbb}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit dim_customer STARTED"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber, layer_name,table_name, load_start_dts,row_count,status&#xA;) VALUES ( ?, 'DWH', 'dimcustomer_dwh', GETDATE(), 0, 'STARTED');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_customer\Audit SCD2 Insert"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3b126afa-926a-4e46-8dd1-5a60c7b56397}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit SCD2 Insert"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber, layer_name,table_name, load_start_dts,row_count,status&#xA;) VALUES ( ?, 'DWH', 'dimcustomer_dwh', GETDATE(), ?, 'INSERT');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2I"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_customer\Audit SCD2 update"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F4CB9F4D-EA85-4C4A-9355-999CC9CE9592}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit SCD2 update"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber, layer_name,table_name, load_start_dts,row_count,status&#xA;) VALUES ( ?, 'DWH', 'dimcustomer_dwh', GETDATE(), ?, 'Update');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2U"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_customer\Audit_Update_SCD1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1c105b0b-e107-476c-b9f2-ecff7c6a0fd9}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit_Update_SCD1"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{53B41FC0-D097-4DD8-A136-FAC1E2781AC9}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber,&#xA; layer_name,&#xA;table_name,&#xA; load_start_dts,&#xA;row_count,&#xA;status&#xA;) VALUES ( ?, 'DWH', 'dim_customer_dwh', GETDATE(), ?, 'Update');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Rowfact"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_customer\SCD1 update"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3D925A36-AABD-46DD-B632-117132917CD7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SCD1 update"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+              SQLTask:SqlStatementSource="UPDATE d&#xA;SET&#xA;    d.BuyingGroupName       = s.BuyingGroupName,&#xA;    d.LoadNumber            = ?&#xA;FROM WWI_DWH.dbo.DimCustomer d&#xA;JOIN WWI_DWH.dbo.DimCustomerVW s&#xA;  ON d.CustomerID = s.CustomerID&#xA;WHERE d.ValidTo IS NULL&#xA;-- nincs SCD2 változás&#xA;AND NOT (&#xA;       ISNULL(d.CustomerName, '')           &lt;&gt; ISNULL(s.CustomerName, '')&#xA;    OR ISNULL(d.CategoryName, '')           &lt;&gt; ISNULL(s.CategoryName, '')&#xA;    OR ISNULL(d.DeliveryCityName, '')       &lt;&gt; ISNULL(s.DeliveryCityName, '')&#xA;    OR ISNULL(d.DeliveryStateProvince, '')  &lt;&gt; ISNULL(s.DeliveryStateProvince, '')&#xA;    OR ISNULL(d.DeliveryCountry, '')        &lt;&gt; ISNULL(s.DeliveryCountry, '')&#xA;)&#xA;-- van SCD1 változás&#xA;AND (&#xA;    ISNULL(d.BuyingGroupName, '') &lt;&gt; ISNULL(s.BuyingGroupName, '')&#xA;);&#xA;SELECT @@ROWCOUNT;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Rowcount_SCD1U" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_customer\SCD2 Insert"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{214A336D-0D2C-4B0E-BBDD-BDCB4A9423EF}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SCD2 Insert"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+              SQLTask:SqlStatementSource="INSERT INTO WWI_DWH.dbo.DimCustomer (&#xA;    CustomerID,&#xA;    CustomerName,&#xA;    CategoryName,&#xA;    BuyingGroupName,&#xA;    DeliveryCityName,&#xA;    DeliveryStateProvince,&#xA;    DeliveryCountry,&#xA;    ValidFrom,&#xA;    ValidTo,&#xA;    LoadNumber&#xA;)&#xA;SELECT&#xA;    s.CustomerID,&#xA;    s.CustomerName,&#xA;    s.CategoryName,&#xA;    s.BuyingGroupName,&#xA;    s.DeliveryCityName,&#xA;    s.DeliveryStateProvince,&#xA;    s.DeliveryCountry,&#xA;    CAST(GETDATE() AS DATE) AS ValidFrom,&#xA;   CAST('9999-12-31' AS DATE)                    AS ValidTo,&#xA;    ?                       AS LoadNumber&#xA;FROM WWI_DWH.dbo.DimCustomerVW s&#xA;LEFT JOIN WWI_DWH.dbo.DimCustomer d&#xA;  ON d.CustomerID = s.CustomerID&#xA; AND d.ValidTo =  CAST('9999-12-31' as Date)&#xA;whERE d.CustomerID IS NULL;&#xA;SELECT @@ROWCOUNT;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2I" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_customer\SCD2 Update"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{7F5C0F13-8B5C-451B-8BB4-A689235646D9}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SCD2 Update"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+              SQLTask:SqlStatementSource="UPDATE d&#xA;SET&#xA;    d.ValidTo       = DATEADD(DAY, -1, CAST(GETDATE() AS DATE)),&#xA;    d.LoadNumber    = ?&#xA;FROM WWI_DWH.dbo.DimCustomer d&#xA;JOIN WWI_DWH.dbo.DimCustomerVW s&#xA;  ON d.CustomerID = s.CustomerID&#xA;WHERE d.ValidTo IS NULL&#xA;AND (&#xA;       ISNULL(d.CustomerName, '')           &lt;&gt; ISNULL(s.CustomerName, '')&#xA;    OR ISNULL(d.CategoryName, '')           &lt;&gt; ISNULL(s.CategoryName, '')&#xA;    OR ISNULL(d.DeliveryCityName, '')       &lt;&gt; ISNULL(s.DeliveryCityName, '')&#xA;    OR ISNULL(d.DeliveryStateProvince, '')  &lt;&gt; ISNULL(s.DeliveryStateProvince, '')&#xA;    OR ISNULL(d.DeliveryCountry, '')        &lt;&gt; ISNULL(s.DeliveryCountry, '')&#xA;);&#xA;SELECT @@ROWCOUNT;&#xA;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2U" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_customer.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{B61C74E6-610C-4B6A-85BE-8431D66CE509}"
+          DTS:From="Package\dim_customer\Audit dim_customer STARTED"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\dim_customer\SCD1 update" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_customer.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{2ED4CD44-BFEB-4EB5-AD69-D6D1051D69CE}"
+          DTS:From="Package\dim_customer\SCD1 update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\dim_customer\Audit_Update_SCD1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_customer.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{257E8B71-D20F-429B-B29E-6F84C4F3A0A0}"
+          DTS:From="Package\dim_customer\SCD1 update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\dim_customer\SCD2 Update" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_customer.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{96678CC7-6A08-43E3-81BA-E035D153C14E}"
+          DTS:From="Package\dim_customer\SCD2 Update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\dim_customer\SCD2 Insert" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_customer.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{5A43DFCA-7E5E-4315-8907-21FE4D596117}"
+          DTS:From="Package\dim_customer\SCD2 Update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\dim_customer\Audit SCD2 update" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_customer.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{C67306FC-19EA-44AC-9E2D-C0EC3C28DC91}"
+          DTS:From="Package\dim_customer\SCD2 Insert"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\dim_customer\Audit SCD2 Insert" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\dim_deliverymethod"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{429fb0f9-46f6-433c-8c37-b960101d9886}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="dim_deliverymethod">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\dim_deliverymethod\Audit dim_deliverymethod STARTED"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{d0702424-b640-4bc5-b23b-174010f62e1f}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit dim_deliverymethod STARTED"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber, layer_name,table_name, load_start_dts,row_count,status&#xA;) VALUES ( ?, 'DWH', 'dim_deliverymethod_dwh', GETDATE(), 0, 'STARTED');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_deliverymethod\Audit_Update_SCD1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{fdff42e5-07e9-453a-a8a7-376a45c30792}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit_Update_SCD1"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber,&#xA; layer_name,&#xA;table_name,&#xA; load_start_dts,&#xA;row_count,&#xA;status&#xA;) VALUES ( ?, 'DWH', 'dim_customer_dwh', GETDATE(), ?, 'Update');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Rowfact"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_deliverymethod\SCD1 Insert"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{d86767c9-bfd7-4a70-b1dd-6e81c52f6a2a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SCD1 Insert"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+              SQLTask:SqlStatementSource="INSERT INTO WWI_DWH.dbo.DimDeliveryMethod (&#xA;    DeliveryMethodID,&#xA;    DeliveryMethodName,&#xA;    ValidFrom,&#xA;    ValidTo,&#xA;    LoadNumber&#xA;)&#xA;SELECT&#xA;    s.DeliveryMethodID,&#xA;    s.DeliveryMethodName,&#xA;    CAST(GETDATE() AS DATE) AS ValidFrom,&#xA;    CAST('9999-12-31' AS DATE) AS ValidTo, -- Itt javítva: elég egy CAST és nincs felesleges zárójel&#xA;    ? AS LoadNumber&#xA;FROM WWI_DWH.dbo.DimDeliveryMethodVW s&#xA;LEFT JOIN WWI_DWH.dbo.DimDeliveryMethod d&#xA;  ON d.DeliveryMethodID = s.DeliveryMethodID&#xA;WHERE d.DeliveryMethodID IS NULL;&#xA;&#xA;SELECT @@ROWCOUNT;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2U" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_deliverymethod\SCD1 update"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{d1505153-f7ea-42d5-9f92-8a675949e35e}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SCD1 update"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+              SQLTask:SqlStatementSource="UPDATE d&#xA; SET&#xA;    d.DeliveryMethodName    = s.DeliveryMethodName,&#xA;    d.LoadNumber            = ?&#xA;FROM WWI_DWH.dbo.DimDeliveryMethod d&#xA;JOIN WWI_DWH.dbo.DimDeliveryMethodVW s&#xA;  ON d.DeliveryMethodID = s.DeliveryMethodID&#xA;WHERE&#xA;    ISNULL(d.DeliveryMethodName, '') &lt;&gt; ISNULL(s.DeliveryMethodName, '');&#xA;SELECT @@ROWCOUNT;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2U" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_deliverymethod.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{09b3cf35-a56b-4176-acf3-ded5a557de35}"
+          DTS:From="Package\dim_deliverymethod\Audit dim_deliverymethod STARTED"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\dim_deliverymethod\SCD1 update" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_deliverymethod.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{cc58bf4a-4377-42cc-8690-b033349ceb7f}"
+          DTS:From="Package\dim_deliverymethod\SCD1 update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\dim_deliverymethod\Audit_Update_SCD1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_deliverymethod.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{8579A9F7-44BF-4CC0-B251-8C33942BB8B7}"
+          DTS:From="Package\dim_deliverymethod\SCD1 update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\dim_deliverymethod\SCD1 Insert" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\dim_product"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{58b0bcae-ff63-4fef-a151-b4bcb5fba7eb}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="dim_product">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\dim_product\Audit dim_product STARTED"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{e8314a86-00dc-4853-b4c9-45f22bb03bfb}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit dim_product STARTED"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber, layer_name,table_name, load_start_dts,row_count,status&#xA;) VALUES ( ?, 'DWH', 'dim_product_dwh', GETDATE(), 0, 'STARTED');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_product\Audit SCD2 Insert"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{944582c9-bbb3-46fd-9b65-a42966258adc}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit SCD2 Insert"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber, layer_name,table_name, load_start_dts,row_count,status&#xA;) VALUES ( ?, 'DWH', 'dimcustomer_dwh', GETDATE(), ?, 'INSERT');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2I"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_product\Audit SCD2 update"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6d036296-a054-444c-83d2-c7e13c64f7a0}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit SCD2 update"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber, layer_name,table_name, load_start_dts,row_count,status&#xA;) VALUES ( ?, 'DWH', 'dimcustomer_dwh', GETDATE(), ?, 'Update');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2U"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_product\Audit_Update_SCD1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{a10a8fa0-8973-44d9-97ef-6cd65f7c0229}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit_Update_SCD1"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber,&#xA; layer_name,&#xA;table_name,&#xA; load_start_dts,&#xA;row_count,&#xA;status&#xA;) VALUES ( ?, 'DWH', 'dim_customer_dwh', GETDATE(), ?, 'Update');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Rowfact"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_product\SCD1 update"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{49be03a9-2bf9-48c1-b9de-6333d49ecdaf}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SCD1 update"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+              SQLTask:SqlStatementSource="UPDATE d &#xA;SET&#xA;    d.UnitPrice     = s.UnitPrice,&#xA;    d.TaxRate       = s.TaxRate,&#xA;    d.LoadNumber    = ?&#xA;FROM WWI_DWH.dbo.DimProduct d&#xA;JOIN WWI_DWH.dbo.DimProductVW s&#xA;  ON d.StockItemID = s.StockItemID&#xA;WHERE d.ValidTo = CAST('9999-12-31' as date)&#xA;-- nincs SCD2 változás&#xA;AND NOT (&#xA;       ISNULL(d.StockItemName, '')      &lt;&gt; ISNULL(s.StockItemName, '')&#xA;    OR ISNULL(d.Brand, '')              &lt;&gt; ISNULL(s.Brand, '')&#xA;    OR ISNULL(d.Size, '')               &lt;&gt; ISNULL(s.Size, '')&#xA;    OR ISNULL(d.ColorName, '')          &lt;&gt; ISNULL(s.ColorName, '')&#xA;    OR ISNULL(d.UnitPackageName, '')    &lt;&gt; ISNULL(s.UnitPackageName, '')&#xA;    OR ISNULL(d.OuterPackageName, '')   &lt;&gt; ISNULL(s.OuterPackageName, '')&#xA;    OR ISNULL(d.StockGroupName, '')     &lt;&gt; ISNULL(s.StockGroupName, '')&#xA;)&#xA;-- van SCD1 változás&#xA;AND (&#xA;       ISNULL(d.UnitPrice, 0)   &lt;&gt; ISNULL(s.UnitPrice, 0)&#xA;    OR ISNULL(d.TaxRate, 0)     &lt;&gt; ISNULL(s.TaxRate, 0)&#xA;);&#xA;SELECT @@ROWCOUNT;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Rowcount_SCD1U" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_product\SCD2 Insert"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{67278c6a-5efb-4b22-9ece-d0ebf2acb21d}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SCD2 Insert"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+              SQLTask:SqlStatementSource="INSERT INTO WWI_DWH.dbo.DimProduct (&#xA;    StockItemID,&#xA;    StockItemName,&#xA;    Brand,&#xA;    Size,&#xA;    ColorName,&#xA;    UnitPackageName,&#xA;    OuterPackageName,&#xA;    StockGroupName,&#xA;    UnitPrice,&#xA;    TaxRate,&#xA;    ValidFrom,&#xA;    ValidTo,&#xA;    LoadNumber&#xA;)&#xA;SELECT&#xA;     DISTINCT s.StockItemID,&#xA;    s.StockItemName,&#xA;    s.Brand,&#xA;    s.Size,&#xA;    s.ColorName,&#xA;    s.UnitPackageName,&#xA;    s.OuterPackageName,&#xA;    s.StockGroupName,&#xA;    s.UnitPrice,&#xA;    s.TaxRate,&#xA;    CAST(GETDATE() AS DATE) AS ValidFrom,&#xA;    CAST('9999-12-31' AS DATE)                   AS ValidTo,&#xA;    ?                       AS LoadNumber&#xA;FROM WWI_DWH.dbo.DimProductVW s&#xA;LEFT JOIN WWI_DWH.dbo.DimProduct d&#xA;  ON d.StockItemID = s.StockItemID&#xA; AND d.ValidTo  =  CAST('9999-12-31' as Date)&#xA;WHERE d.StockItemID IS NULL;&#xA;SELECT @@ROWCOUNT;&#xA;&#xA;WITH CTE AS (&#xA;    SELECT StockItemID, &#xA;           ROW_NUMBER() OVER (PARTITION BY StockItemID ORDER BY ValidFrom DESC) as rn&#xA;    FROM WWI_DWH.dbo.DimProduct&#xA;    WHERE ValidTo = CAST('9999-12-31' AS DATE)&#xA;)&#xA;DELETE FROM CTE WHERE rn &gt; 1;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2I" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_product\SCD2 Update"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{d3875793-dcc4-408c-ab03-2502d8ffbb34}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SCD2 Update"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+              SQLTask:SqlStatementSource="UPDATE d&#xA;SET d.ValidTo = DATEADD(DAY, -1, CAST(GETDATE() AS DATE)),&#xA;    d.LoadNumber = ?&#xA;FROM WWI_DWH.dbo.DimProduct d &#xA;JOIN WWI_DWH.dbo.DimProductVW s ON d.StockItemID = s.StockItemID&#xA;WHERE d.ValidTo = CAST('9999-12-31' as DATE)&#xA;  AND (ISNULL(d.StockItemName, '') &lt;&gt; ISNULL(s.StockItemName, '') OR&#xA;       ISNULL(d.Brand, '') &lt;&gt; ISNULL(s.Brand, '') OR&#xA;       ISNULL(d.Size, '') &lt;&gt; ISNULL(s.Size, '') OR&#xA;       ISNULL(d.ColorName, '') &lt;&gt; ISNULL(s.ColorName, '') OR&#xA;       ISNULL(d.UnitPackageName, '') &lt;&gt; ISNULL(s.UnitPackageName, '') OR&#xA;       ISNULL(d.OuterPackageName, '') &lt;&gt; ISNULL(s.OuterPackageName, '') OR&#xA;       ISNULL(d.StockGroupName, '') &lt;&gt; ISNULL(s.StockGroupName, ''));&#xA;&#xA;SELECT @@ROWCOUNT;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2U" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_product.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{1e8b96d8-8db7-4b6d-9b5c-c9a5bda0732c}"
+          DTS:From="Package\dim_product\Audit dim_product STARTED"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\dim_product\SCD1 update" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_product.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{99ab3947-d2e1-43cb-a58a-cc2e9b9ca041}"
+          DTS:From="Package\dim_product\SCD1 update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\dim_product\Audit_Update_SCD1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_product.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{39207bb4-10be-45d3-9e37-18ddf1e9d2a3}"
+          DTS:From="Package\dim_product\SCD1 update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\dim_product\SCD2 Update" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_product.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{b5ee9b55-5e34-49ae-a04f-6a9fcae671a2}"
+          DTS:From="Package\dim_product\SCD2 Update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\dim_product\SCD2 Insert" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_product.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{df923a58-3c8b-4bdd-9c91-c8f3213f79c9}"
+          DTS:From="Package\dim_product\SCD2 Update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\dim_product\Audit SCD2 update" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_product.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{80bcdaf5-281a-4cb0-b015-20ba631be628}"
+          DTS:From="Package\dim_product\SCD2 Insert"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\dim_product\Audit SCD2 Insert" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\dim_salesperson"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{e94c458d-2d64-4c7d-b86c-f4982880272d}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="dim_salesperson">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\dim_salesperson\Audit dim_sales STARTED"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{15df6184-ca64-4696-ab16-18d15ca7d841}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit dim_sales STARTED"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber, layer_name,table_name, load_start_dts,row_count,status&#xA;) VALUES ( ?, 'DWH', 'dim_sales_dwh', GETDATE(), 0, 'STARTED');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_salesperson\Audit SCD2 Insert"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3954e6b2-95a2-4047-9f33-01c48a855a19}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit SCD2 Insert"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber, layer_name,table_name, load_start_dts,row_count,status&#xA;) VALUES ( ?, 'DWH', 'dim_salesperson_dwh', GETDATE(), ?, 'INSERT');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2I"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_salesperson\Audit SCD2 update"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{b2b4d8dd-6a10-4355-bae8-bab80d50a7ce}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit SCD2 update"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber, layer_name,table_name, load_start_dts,row_count,status&#xA;) VALUES ( ?, 'DWH', 'dim_salesperson_dwh', GETDATE(), ?, 'Update');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2U"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_salesperson\Audit_Update_SCD1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{d199b6b7-7757-4a9b-817c-023655d996d4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit_Update_SCD1"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber,&#xA; layer_name,&#xA;table_name,&#xA; load_start_dts,&#xA;row_count,&#xA;status&#xA;) VALUES ( ?, 'DWH', 'dim_customer_dwh', GETDATE(), ?, 'Update');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Rowfact"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_salesperson\SCD1 update"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{a04327cc-addf-4660-ba80-394c4e8ec984}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SCD1 update"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+              SQLTask:SqlStatementSource="UPDATE d&#xA;SET&#xA;    d.IsSalesperson = s.IsSalesperson,&#xA;    d.LoadNumber    = ?&#xA;FROM WWI_DWH.dbo.DimSalesperson d&#xA;JOIN WWI_DWH.dbo.DimSalespersonVW s&#xA;  ON d.PersonID = s.PersonID&#xA;WHERE d.ValidTo IS NULL&#xA;-- nincs SCD2 változás&#xA;AND NOT (&#xA;    ISNULL(d.FullName, '') &lt;&gt; ISNULL(s.FullName, '')&#xA;)&#xA;-- van SCD1 változás&#xA;AND (&#xA;    ISNULL(d.IsSalesperson, 0) &lt;&gt; ISNULL(s.IsSalesperson, 0)&#xA;);&#xA;SELECT @@ROWCOUNT;&#xA;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Rowcount_SCD1U" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_salesperson\SCD2 Insert"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{d7b9db2c-9ab9-4bb5-9313-3a8535a186c7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SCD2 Insert"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+              SQLTask:SqlStatementSource="INSERT INTO WWI_DWH.dbo.DimSalesperson (&#xA;    PersonID,&#xA;    FullName,&#xA;    IsSalesperson,&#xA;    ValidFrom,&#xA;    ValidTo,&#xA;    LoadNumber&#xA;)&#xA;SELECT&#xA;    s.PersonID,&#xA;    s.FullName,&#xA;    s.IsSalesperson,&#xA;    CAST(GETDATE() AS DATE) AS ValidFrom,&#xA;    CAST('9999-12-31' AS DATE) AS ValidTo, -- Itt volt a hiba, most már tiszta&#xA;    ? AS LoadNumber&#xA;FROM WWI_DWH.dbo.DimSalespersonVW s&#xA;LEFT JOIN WWI_DWH.dbo.DimSalesperson d&#xA;  ON d.PersonID = s.PersonID&#xA; AND d.ValidTo =  CAST('9999-12-31' as Date)&#xA;WHERE d.PersonID IS NULL;&#xA;&#xA;SELECT @@ROWCOUNT;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2I" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\dim_salesperson\SCD2 Update"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0272b2b5-9467-4e9c-b83f-40f2b783caf1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SCD2 Update"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+              SQLTask:SqlStatementSource="UPDATE d&#xA;SET&#xA;    d.ValidTo       = DATEADD(DAY, -1, CAST(GETDATE() AS DATE)),&#xA;    d.LoadNumber    = ?&#xA;FROM WWI_DWH.dbo.DimSalesperson d&#xA;JOIN WWI_DWH.dbo.DimSalespersonVW s&#xA;  ON d.PersonID = s.PersonID&#xA;WHERE d.ValidTo IS NULL&#xA;AND (&#xA;    ISNULL(d.FullName, '') &lt;&gt; ISNULL(s.FullName, '')&#xA;);&#xA;SELECT @@ROWCOUNT;&#xA;&#xA;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Rowcount_SCD2U" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_salesperson.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{9758cc64-65a9-4679-a5d5-c08bf31e7179}"
+          DTS:From="Package\dim_salesperson\Audit dim_sales STARTED"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\dim_salesperson\SCD1 update" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_salesperson.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{6b2231f9-0dca-4c2c-a26c-4e2c78ea26c9}"
+          DTS:From="Package\dim_salesperson\SCD1 update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\dim_salesperson\Audit_Update_SCD1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_salesperson.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{e56ad2c0-6fc7-4b77-b5e7-739bc994364f}"
+          DTS:From="Package\dim_salesperson\SCD1 update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\dim_salesperson\SCD2 Update" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_salesperson.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{eb3129f3-cec1-4077-8263-3e5177898722}"
+          DTS:From="Package\dim_salesperson\SCD2 Update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\dim_salesperson\SCD2 Insert" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_salesperson.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{24526a50-e330-456e-825e-3b8afe09d6f3}"
+          DTS:From="Package\dim_salesperson\SCD2 Update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\dim_salesperson\Audit SCD2 update" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\dim_salesperson.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{c2143147-4a4b-4a40-92c9-d9d996fc03ab}"
+          DTS:From="Package\dim_salesperson\SCD2 Insert"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\dim_salesperson\Audit SCD2 Insert" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{BFF8C524-198A-4486-8A25-9FC7ACD03118}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+          SQLTask:SqlStatementSource="Use WWI_DWH ;&#xA;Exec sp_MSforeachtable 'TRUNCATE TABLE ?'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FACT_Sales"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{08574127-FC25-44B9-9DBF-1AC60E7898DD}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FACT_Sales">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FACT_Sales\Audit fact_sales STARTED"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8994CA4F-739A-4F14-A1CF-77A665E2DE73}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit fact_sales STARTED"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{160C0D5E-E000-4393-BB75-BA87BC162329}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber, layer_name,table_name, load_start_dts,row_count,status&#xA;) VALUES ( ?, 'DWH', 'fact_sales_dwh', GETDATE(), 0, 'STARTED');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FACT_Sales\Audit_Insert"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{50CBF15D-FB8A-46A6-8035-6E94FA42C3E2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Audit_Insert"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{6BEAFC53-C168-4711-8A2E-ADC4363E5E4E}"
+              SQLTask:SqlStatementSource="Insert into etl.etl_load_audit(&#xA;loadnumber,&#xA; layer_name,&#xA;table_name,&#xA; load_start_dts,&#xA;row_count,&#xA;status&#xA;) VALUES ( ?, 'DWH', 'fact_sales_dwh', GETDATE(), ?, 'Update');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Rowfact"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FACT_Sales\Insert"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6F36D7AE-538C-444C-938B-EB997B204FD2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1EA88E48-106B-4D0D-A1CC-1E678E3BC29B}"
+              SQLTask:SqlStatementSource="&#xA;INSERT INTO WWI_DWH.dbo.FactSales (&#xA;    InvoiceLineID,&#xA;    InvoiceID,&#xA;    DimDateKey,&#xA;    DimCustomerID,&#xA;    DimProductID,&#xA;    DimSalespersonID,&#xA;    DimDeliveryMethodID,&#xA;    DimCityID,&#xA;    Quantity,&#xA;    UnitPrice,&#xA;    TaxRate,&#xA;    TaxAmount,&#xA;    LineProfit,&#xA;    ExtendedPrice,&#xA;    LoadNumber&#xA;)&#xA;SELECT&#xA;    src.InvoiceLineID,&#xA;    src.InvoiceID,&#xA;    src.DateKey                 AS DimDateKey,&#xA;    dc.CustomerID,&#xA;    dp.StockItemID,&#xA;    ds.PersonID,&#xA;    ddm.DeliveryMethodID,&#xA;    dci.CityID,&#xA;    src.Quantity,&#xA;    src.UnitPrice,&#xA;    src.TaxRate,&#xA;    src.TaxAmount,&#xA;    src.LineProfit,&#xA;    src.ExtendedPrice,&#xA;    ?                           AS LoadNumber&#xA;FROM WWI_DWH.dbo.FactSalesVW src&#xA;    JOIN WWI_DWH.dbo.DimCustomer dc&#xA;        ON dc.CustomerID = src.CustomerID&#xA;       AND dc.ValidTo = CAST('9999-12-31' AS DATE)&#xA;    JOIN WWI_DWH.dbo.DimProduct dp&#xA;        ON dp.StockItemID = src.StockItemID&#xA;       AND dp.ValidTo = CAST('9999-12-31' AS DATE)&#xA;    JOIN WWI_DWH.dbo.DimSalesperson ds&#xA;        ON ds.PersonID = src.PersonID&#xA;       AND ds.ValidTo = CAST('9999-12-31' AS DATE)&#xA;    JOIN WWI_DWH.dbo.DimDeliveryMethod ddm&#xA;        ON ddm.DeliveryMethodID = src.DeliveryMethodID&#xA;       AND ddm.ValidTo = CAST('9999-12-31' AS DATE)&#xA;    JOIN WWI_DWH.dbo.DimCity dci&#xA;        ON dci.CityID = src.CityID&#xA;       AND dci.ValidTo = CAST('9999-12-31' AS DATE)&#xA;LEFT JOIN WWI_DWH.dbo.FactSales f&#xA;    ON f.InvoiceLineID = src.InvoiceLineID&#xA;WHERE f.InvoiceLineID IS NULL;&#xA;SELECT @@ROWCOUNT;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Rowfact" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::LoadNumber"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FACT_Sales.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{70707B3B-7936-45DC-8A6C-43443685D0BF}"
+          DTS:From="Package\FACT_Sales\Audit fact_sales STARTED"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\FACT_Sales\Insert" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FACT_Sales.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{7EDD55F0-5FF1-415F-AFCD-63E1A75A228B}"
+          DTS:From="Package\FACT_Sales\Insert"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\FACT_Sales\Audit_Insert" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{BD75C6CC-3ADE-4210-86CC-F667D7C0B7DF}"
+      DTS:From="Package\dim_City"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\FACT_Sales" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{F3F3DF42-6E73-4985-9310-8DEDCB331399}"
+      DTS:From="Package\dim_customer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\dim_product" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{6B179261-C3CC-4281-A156-4B6AB0A56102}"
+      DTS:From="Package\dim_product"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\dim_salesperson" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{DDF2CEE7-C3DD-4E52-8C1E-D020ADB49225}"
+      DTS:From="Package\dim_salesperson"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\dim_deliverymethod" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{766D9D28-751C-4AFA-8560-234AE06E12B4}"
+      DTS:From="Package\dim_deliverymethod"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\dim_City" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{BA083CB6-531B-424A-B53C-86AFCCC41E93}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\dim_customer" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="104.8,41.6"
+          Id="Package\FACT_Sales\Insert"
+          TopLeft="63.2666567408381,88.0666655035151" />
+        <NodeLayout
+          Size="256,41.6"
+          Id="Package\FACT_Sales\Audit fact_sales STARTED"
+          TopLeft="5.76665988249937,17.8666659916772" />
+        <EdgeLayout
+          Id="Package\FACT_Sales.PrecedenceConstraints[Constraint]"
+          TopLeft="133.766659882499,59.4666659916772">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18.1000031416613,28.5999995118379"
+              Start="0,0"
+              End="-18.1000031416613,21.0999995118379">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.299999755919" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.299999755919"
+                    Point2="0,14.299999755919"
+                    Point3="-4,14.299999755919" />
+                  <mssgle:LineSegment
+                    End="-14.1000031416613,14.299999755919" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.1000031416613,14.299999755919"
+                    Point2="-18.1000031416613,14.299999755919"
+                    Point3="-18.1000031416613,18.299999755919" />
+                  <mssgle:LineSegment
+                    End="-18.1000031416613,21.0999995118379" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\FACT_Sales\Audit_Insert"
+          TopLeft="64.0999900286401,148.266665268474" />
+        <EdgeLayout
+          Id="Package\FACT_Sales.PrecedenceConstraints[Constraint 1]"
+          TopLeft="168.066656740838,108.866665503515">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21.5666667121979,39.3999997649591"
+              Start="0,0"
+              End="-21.5666667121979,31.8999997649591">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-17.5666667121979,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.5666667121979,0"
+                    Point2="-21.5666667121979,0"
+                    Point3="-21.5666667121979,4" />
+                  <mssgle:LineSegment
+                    End="-21.5666667121979,31.8999997649591" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="279.2,251.2"
+          Size="279.2,294.4"
+          Id="Package\FACT_Sales"
+          TopLeft="1205.74067486197,716.103698101559" />
+        <NodeLayout
+          Size="256,41.6"
+          Id="Package\dim_customer\Audit dim_customer STARTED"
+          TopLeft="10.6666597459056,16.4666641655896" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_customer\SCD1 update"
+          TopLeft="59.8333237262238,82.7999970710277" />
+        <EdgeLayout
+          Id="Package\dim_customer.PrecedenceConstraints[Constraint]"
+          TopLeft="140.449991736065,58.0666641655896">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.7333329054381"
+              Start="0,0"
+              End="0,17.2333329054381">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.2333329054381" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_customer\Audit_Update_SCD1"
+          TopLeft="270.766642125283,76.2666654131147" />
+        <EdgeLayout
+          Id="Package\dim_customer.PrecedenceConstraints[Constraint 1]"
+          TopLeft="224.633323726224,100.333331242071">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.1333183990594,0"
+              Start="0,0"
+              End="38.6333183990594,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38.6333183990594,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_customer\SCD2 Update"
+          TopLeft="72.7666492281695,151.133330157267" />
+        <EdgeLayout
+          Id="Package\dim_customer.PrecedenceConstraints[Constraint 2]"
+          TopLeft="142.233323726224,124.399997071028">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.9333255019458,26.7333330862388"
+              Start="0,0"
+              End="12.9333255019458,19.2333330862388">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.36666654311939" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.36666654311939"
+                    Point2="0,13.3666665431194"
+                    Point3="4,13.3666665431194" />
+                  <mssgle:LineSegment
+                    End="8.93332550194577,13.3666665431194" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.93332550194577,13.3666665431194"
+                    Point2="12.9333255019458,13.3666665431194"
+                    Point3="12.9333255019458,17.3666665431194" />
+                  <mssgle:LineSegment
+                    End="12.9333255019458,19.2333330862388" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_customer\SCD2 Insert"
+          TopLeft="272.766638300652,149.999997432629" />
+        <EdgeLayout
+          Id="Package\dim_customer.PrecedenceConstraints[Constraint 3]"
+          TopLeft="237.56664922817,171.366663794948">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35.1999890724825,0"
+              Start="0,0"
+              End="27.6999890724825,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.6999890724825,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\dim_customer\Audit SCD2 update"
+          TopLeft="78.5999822427837,222.799996926387" />
+        <EdgeLayout
+          Id="Package\dim_customer.PrecedenceConstraints[Constraint 4]"
+          TopLeft="158.683315735477,192.733330157267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.0666667691206"
+              Start="0,0"
+              End="0,22.5666667691206">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5666667691206" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\dim_customer\Audit SCD2 Insert"
+          TopLeft="269.433305149444,227.399998752475" />
+        <EdgeLayout
+          Id="Package\dim_customer.PrecedenceConstraints[Constraint 5]"
+          TopLeft="352.699971725048,191.599997432629">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.8000013198455"
+              Start="0,0"
+              End="0,28.3000013198455">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.3000013198455" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="484,333.6"
+          Size="484,376.8"
+          Id="Package\dim_customer"
+          TopLeft="127.499993033708,125.807406721704" />
+        <NodeLayout
+          Size="256,41.6"
+          Id="Package\dim_product\Audit dim_product STARTED"
+          TopLeft="10.6666597459056,16.4666641655896" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\dim_product\Audit SCD2 Insert"
+          TopLeft="269.433305149444,227.399998752475" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\dim_product\Audit SCD2 update"
+          TopLeft="78.5999822427837,222.799996926387" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_product\Audit_Update_SCD1"
+          TopLeft="270.766642125283,76.2666654131147" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_product\SCD1 update"
+          TopLeft="59.8333237262238,82.7999970710277" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_product\SCD2 Insert"
+          TopLeft="288.507378181357,135.55555308863" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\dim_product\SCD2 Update"
+          TopLeft="72.7666492281695,151.133330157267" />
+        <EdgeLayout
+          Id="Package\dim_product.PrecedenceConstraints[Constraint]"
+          TopLeft="140.449991736065,58.0666641655896">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.7333329054381"
+              Start="0,0"
+              End="0,17.2333329054381">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.2333329054381" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dim_product.PrecedenceConstraints[Constraint 1]"
+          TopLeft="224.633323726224,100.333331242071">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.1333183990594,0"
+              Start="0,0"
+              End="38.6333183990594,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38.6333183990594,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dim_product.PrecedenceConstraints[Constraint 2]"
+          TopLeft="143.099986477197,124.399997071028">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.7333330862393"
+              Start="0,0"
+              End="0,19.2333330862393">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.2333330862393" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dim_product.PrecedenceConstraints[Constraint 3]"
+          TopLeft="215.166649228169,171.933330157267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.3407289531874,-15.5777770686374"
+              Start="0,0"
+              End="65.8407289531874,-15.5777770686374">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32.6703644765937,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.6703644765937,0"
+                    Point2="36.6703644765937,0"
+                    Point3="36.6703644765937,-4" />
+                  <mssgle:LineSegment
+                    End="36.6703644765937,-11.5777770686374" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.6703644765937,-11.5777770686374"
+                    Point2="36.6703644765937,-15.5777770686374"
+                    Point3="40.6703644765937,-15.5777770686374" />
+                  <mssgle:LineSegment
+                    End="65.8407289531874,-15.5777770686374" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dim_product.PrecedenceConstraints[Constraint 4]"
+          TopLeft="143.96664922817,192.733330157267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.2333330146142,30.06666676912"
+              Start="0,0"
+              End="18.2333330146142,22.56666676912">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.03333338456" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.03333338456"
+                    Point2="0,15.03333338456"
+                    Point3="4,15.03333338456" />
+                  <mssgle:LineSegment
+                    End="14.2333330146142,15.03333338456" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.2333330146142,15.03333338456"
+                    Point2="18.2333330146142,15.03333338456"
+                    Point3="18.2333330146142,19.03333338456" />
+                  <mssgle:LineSegment
+                    End="18.2333330146142,22.56666676912" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dim_product.PrecedenceConstraints[Constraint 5]"
+          TopLeft="370.907378181357,177.15555308863">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.6740730319129,50.2444456638454"
+              Start="0,0"
+              End="-20.6740730319129,42.7444456638454">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.1222228319227" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.1222228319227"
+                    Point2="0,25.1222228319227"
+                    Point3="-4,25.1222228319227" />
+                  <mssgle:LineSegment
+                    End="-16.6740730319129,25.1222228319227" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.6740730319129,25.1222228319227"
+                    Point2="-20.6740730319129,25.1222228319227"
+                    Point3="-20.6740730319129,29.1222228319227" />
+                  <mssgle:LineSegment
+                    End="-20.6740730319129,42.7444456638454" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="533.6,392"
+          Size="533.6,435.2"
+          Id="Package\dim_product"
+          TopLeft="54.5370340572654,589.474073201543" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="369.499993033708,502.607406721704">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-48.1629589764424,86.866666479839"
+              Start="0,0"
+              End="-48.1629589764424,79.366666479839">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.4333332399195" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.4333332399195"
+                    Point2="0,43.4333332399195"
+                    Point3="-4,43.4333332399195" />
+                  <mssgle:LineSegment
+                    End="-44.1629589764424,43.4333332399195" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-44.1629589764424,43.4333332399195"
+                    Point2="-48.1629589764424,43.4333332399195"
+                    Point3="-48.1629589764424,47.4333332399195" />
+                  <mssgle:LineSegment
+                    End="-48.1629589764424,79.366666479839" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="256,41.6"
+          Id="Package\dim_salesperson\Audit dim_sales STARTED"
+          TopLeft="10.6666597459056,16.4666641655896" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\dim_salesperson\Audit SCD2 Insert"
+          TopLeft="269.433305149444,227.399998752475" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\dim_salesperson\Audit SCD2 update"
+          TopLeft="78.5999822427837,222.799996926387" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_salesperson\Audit_Update_SCD1"
+          TopLeft="270.766642125283,76.2666654131147" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_salesperson\SCD1 update"
+          TopLeft="59.8333237262238,82.7999970710277" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_salesperson\SCD2 Insert"
+          TopLeft="272.766638300652,149.999997432629" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_salesperson\SCD2 Update"
+          TopLeft="72.7666492281695,151.133330157267" />
+        <EdgeLayout
+          Id="Package\dim_salesperson.PrecedenceConstraints[Constraint]"
+          TopLeft="140.449991736065,58.0666641655896">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.7333329054381"
+              Start="0,0"
+              End="0,17.2333329054381">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.2333329054381" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dim_salesperson.PrecedenceConstraints[Constraint 1]"
+          TopLeft="224.633323726224,100.333331242071">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.1333183990594,0"
+              Start="0,0"
+              End="38.6333183990594,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38.6333183990594,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dim_salesperson.PrecedenceConstraints[Constraint 2]"
+          TopLeft="142.233323726224,124.399997071028">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.9333255019458,26.7333330862388"
+              Start="0,0"
+              End="12.9333255019458,19.2333330862388">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.36666654311939" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.36666654311939"
+                    Point2="0,13.3666665431194"
+                    Point3="4,13.3666665431194" />
+                  <mssgle:LineSegment
+                    End="8.93332550194577,13.3666665431194" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.93332550194577,13.3666665431194"
+                    Point2="12.9333255019458,13.3666665431194"
+                    Point3="12.9333255019458,17.3666665431194" />
+                  <mssgle:LineSegment
+                    End="12.9333255019458,19.2333330862388" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dim_salesperson.PrecedenceConstraints[Constraint 3]"
+          TopLeft="237.56664922817,171.366663794948">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35.1999890724825,0"
+              Start="0,0"
+              End="27.6999890724825,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.6999890724825,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dim_salesperson.PrecedenceConstraints[Constraint 4]"
+          TopLeft="158.683315735477,192.733330157267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.0666667691206"
+              Start="0,0"
+              End="0,22.5666667691206">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5666667691206" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dim_salesperson.PrecedenceConstraints[Constraint 5]"
+          TopLeft="352.699971725048,191.599997432629">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.8000013198455"
+              Start="0,0"
+              End="0,28.3000013198455">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.3000013198455" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="484,333.6"
+          Size="484,376.8"
+          Id="Package\dim_salesperson"
+          TopLeft="638.711084824361,604.400002061128" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="588.137034057266,807.074073201543">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="50.5740507670951,-14.2740711404149"
+              Start="0,0"
+              End="43.0740507670951,-14.2740711404149">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="21.2870253835475,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.2870253835475,0"
+                    Point2="25.2870253835475,0"
+                    Point3="25.2870253835475,-4" />
+                  <mssgle:LineSegment
+                    End="25.2870253835475,-10.2740711404149" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.2870253835475,-10.2740711404149"
+                    Point2="25.2870253835475,-14.2740711404149"
+                    Point3="29.2870253835475,-14.2740711404149" />
+                  <mssgle:LineSegment
+                    End="43.0740507670951,-14.2740711404149" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="256,41.6"
+          Id="Package\dim_deliverymethod\Audit dim_deliverymethod STARTED"
+          TopLeft="9.74073387057024,15.5037012093229" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_deliverymethod\Audit_Update_SCD1"
+          TopLeft="270.766642125283,76.2666654131147" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_deliverymethod\SCD1 update"
+          TopLeft="59.8333237262238,82.7999970710277" />
+        <EdgeLayout
+          Id="Package\dim_deliverymethod.PrecedenceConstraints[Constraint]"
+          TopLeft="139.987028798397,57.1037012093229">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.6962958617048"
+              Start="0,0"
+              End="0,18.1962958617048">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1962958617048" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dim_deliverymethod.PrecedenceConstraints[Constraint 1]"
+          TopLeft="224.633323726224,100.333331242071">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.1333183990594,0"
+              Start="0,0"
+              End="38.6333183990594,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38.6333183990594,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\dim_deliverymethod\SCD1 Insert"
+          TopLeft="61.9814783954698,148.496299079959" />
+        <EdgeLayout
+          Id="Package\dim_deliverymethod.PrecedenceConstraints[Constraint 2]"
+          TopLeft="142.233323726224,124.399997071028">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.651845330754,24.0963020089309"
+              Start="0,0"
+              End="-12.651845330754,16.5963020089309">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.04815100446544" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.04815100446544"
+                    Point2="0,12.0481510044654"
+                    Point3="-4,12.0481510044654" />
+                  <mssgle:LineSegment
+                    End="-8.65184533075399,12.0481510044654" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.65184533075399,12.0481510044654"
+                    Point2="-12.651845330754,12.0481510044654"
+                    Point3="-12.651845330754,16.0481510044654" />
+                  <mssgle:LineSegment
+                    End="-12.651845330754,16.5963020089309" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="484,245.6"
+          Size="484,288.8"
+          Id="Package\dim_deliverymethod"
+          TopLeft="654.351816099644,192.348153074634" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="880.711084824361,604.400002061128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-63.6926020580498,-123.251848986494"
+              Start="0,0"
+              End="-63.6926020580498,-115.751848986494">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-69.7074484054324" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-69.7074484054324"
+                    Point2="0,-73.7074484054324"
+                    Point3="-4,-73.7074484054324" />
+                  <mssgle:LineSegment
+                    End="-59.6926020580498,-73.7074484054324" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-59.6926020580498,-73.7074484054324"
+                    Point2="-63.6926020580498,-73.7074484054324"
+                    Point3="-63.6926020580498,-77.7074484054324" />
+                  <mssgle:LineSegment
+                    End="-63.6926020580498,-115.751848986494" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="256,41.6"
+          Id="Package\dim_City\Audit dim_City STARTED"
+          TopLeft="9.74073387057024,15.5037012093229" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_City\Audit_Update_SCD1"
+          TopLeft="270.766642125283,76.2666654131147" />
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\dim_City\SCD1 Insert"
+          TopLeft="61.9814783954698,148.496299079959" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\dim_City\SCD1 update"
+          TopLeft="59.8333237262238,82.7999970710277" />
+        <EdgeLayout
+          Id="Package\dim_City.PrecedenceConstraints[Constraint]"
+          TopLeft="139.987028798397,57.1037012093229">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.6962958617048"
+              Start="0,0"
+              End="0,18.1962958617048">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1962958617048" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dim_City.PrecedenceConstraints[Constraint 1]"
+          TopLeft="224.633323726224,100.333331242071">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.1333183990594,0"
+              Start="0,0"
+              End="38.6333183990594,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38.6333183990594,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dim_City.PrecedenceConstraints[Constraint 2]"
+          TopLeft="142.233323726224,124.399997071028">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.651845330754,24.0963020089313"
+              Start="0,0"
+              End="-12.651845330754,16.5963020089313">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.04815100446564" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.04815100446564"
+                    Point2="0,12.0481510044656"
+                    Point3="-4,12.0481510044656" />
+                  <mssgle:LineSegment
+                    End="-8.65184533075401,12.0481510044656" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.65184533075401,12.0481510044656"
+                    Point2="-12.651845330754,12.0481510044656"
+                    Point3="-12.651845330754,16.0481510044656" />
+                  <mssgle:LineSegment
+                    End="-12.651845330754,16.5963020089313" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="484,245.6"
+          Size="484,288.8"
+          Id="Package\dim_City"
+          TopLeft="1163.46290080259,241.459263844233" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="1138.35181609964,336.748153074634">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25.111084702944,49.1111107695989"
+              Start="0,0"
+              End="17.611084702944,49.1111107695989">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="8.55554235147201,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.55554235147201,0"
+                    Point2="12.555542351472,0"
+                    Point3="12.555542351472,4" />
+                  <mssgle:LineSegment
+                    End="12.555542351472,45.1111107695989" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.555542351472,45.1111107695989"
+                    Point2="12.555542351472,49.1111107695989"
+                    Point3="16.555542351472,49.1111107695989" />
+                  <mssgle:LineSegment
+                    End="17.611084702944,49.1111107695989" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="1405.46290080259,530.259263844233">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-60.1222259406154,185.844434257326"
+              Start="0,0"
+              End="-60.1222259406154,178.344434257326">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.922217128663" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,88.922217128663"
+                    Point2="0,92.922217128663"
+                    Point3="-4,92.922217128663" />
+                  <mssgle:LineSegment
+                    End="-56.1222259406154,92.922217128663" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-56.1222259406154,92.922217128663"
+                    Point2="-60.1222259406154,92.922217128663"
+                    Point3="-60.1222259406154,96.922217128663" />
+                  <mssgle:LineSegment
+                    End="-60.1222259406154,178.344434257326" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="349.999980876844,36.5925923381323" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="432.399980876844,78.1925923381323">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-62.8999878431362,47.6148143835721"
+              Start="0,0"
+              End="-62.8999878431362,40.1148143835721">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.8074071917861" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.8074071917861"
+                    Point2="0,23.8074071917861"
+                    Point3="-4,23.8074071917861" />
+                  <mssgle:LineSegment
+                    End="-58.8999878431362,23.8074071917861" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-58.8999878431362,23.8074071917861"
+                    Point2="-62.8999878431362,23.8074071917861"
+                    Point3="-62.8999878431362,27.8074071917861" />
+                  <mssgle:LineSegment
+                    End="-62.8999878431362,40.1148143835721" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
